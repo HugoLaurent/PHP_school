@@ -23,3 +23,46 @@ $_SESSION['users'] = [
     ['id' => 2, 'nom' => 'Durand', 'email' => 'durand@example.com'],
     ['id' => 3, 'nom' => 'Martin', 'email' => 'martin@example.com'],
 ];
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($_SESSION['users'] as $user): ?>
+                <tr>
+                    <td><?php echo $user['id']; ?></td>
+                    <td><?php echo $user['nom']; ?></td>
+                    <td><?php echo $user['email']; ?></td>
+                    <td>
+                        <a href="view.php?id=<?php echo $user['id']; ?>">Voir</a>
+                        <a href="edit.php?id=<?php echo $user['id']; ?>">Modifier</a>
+                        <a href="delete.php?id=<?php echo $user['id']; ?>">Supprimer</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
