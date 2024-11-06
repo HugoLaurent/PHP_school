@@ -14,7 +14,7 @@ function onChange($id)
 
 
 
-<form method="POST" style="display: flex;">
+<form method="submit" style="display: flex;">
     <input type="text" placeholder="<?php echo $name; ?>  " name='name'>
     <button type="submit">Modifier</button>
 </form>
